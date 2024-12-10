@@ -21,7 +21,11 @@ const userSchema = new mongoose.Schema({
     },
     gender: {
         type: String,
-        enum: ['Male','Female','Other'],
+        enum: ['Male', 'Female', 'Other'],
+        required: true
+    },
+    dateOfBirth: {
+        type: Date,
         required: true
     },
     password: {
@@ -29,8 +33,12 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    nationality: {
+        type: String,
+        required: true
+    },
     role: {
         type: String,
-        enum: ['visitor','learner','schoolAdmin','Admin']
+        enum: ['visitor', 'learner', 'schoolAdmin', 'Admin']
     }
 })
