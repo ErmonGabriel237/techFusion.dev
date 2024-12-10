@@ -37,8 +37,19 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    profile: {
+        bio: {
+            type: String
+        },
+        profilePhoto: {
+            type: String,
+            default: ""
+        }
+    },
     role: {
         type: String,
         enum: ['visitor', 'learner', 'schoolAdmin', 'Admin']
-    }
-})
+    },
+}, {timestamps: true});
+
+export default User = mongoose.model('User', userSchema);
